@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np
+
+num_rows = 900
+columns = ["Store ID", "Store Area", "Available items", "Customer_count_daily", "Store_Sales"]
+
+#Generating synthetic data
+np.random.seed(42)
+store_ids =np.arange(1, num_rows + 1)
+store_areas =  np.random.randit(500, 5000, size = num_rows)                 # Store areas in square feet
+available_items =  np.random.randit(100, 2000, size = num_rows)             # Number of items available
+daily_customers =  np.random.randit(50, 500, size = num_rows)              # Daily customer count
+store_sales =  np.random.uniform(1000, 50000, size = num_rows)          # Store sales in currency
+
+# Creating a DataFrame
+
+df = pd.DataFrame({
+    "Store ID": store_ids,
+    "Store Area ": store_areas,
+    "Available items": available_items,
+    "Customer_count_daily": daily_customers,
+    "Store_Sales": store_sales
+})
